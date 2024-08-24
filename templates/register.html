@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightNLP | Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>InsightNLP</h1>
+            <h3>Register Here</h3>
+            
+            {% if message %}
+                <p style="color: red;">{{ message }}</p>
+            {% endif %}
+            
+            <form action="/perform_registration" method="post">
+                <label for="name">Name</label><br>
+                <input type="text" name="user_ka_name" id="name" required><br><br>
+                
+                <label for="email">Email</label><br>
+                <input type="email" name="user_ka_email" id="email" required><br><br>
+                
+                <label for="password">Password</label><br>
+                <input type="password" name="user_ka_password" id="password" required><br><br>
+                
+                <input type="submit" value="Register">
+            </form>
+            <p>Already a member? <a href="/">Login Here</a></p>
+        </div>
+    </div>
+</body>
+</html>

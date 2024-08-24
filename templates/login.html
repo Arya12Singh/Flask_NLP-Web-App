@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <h1>InsightNLP</h1>
+        <h3>Login Here</h3>
+        {% if message %}
+        <p class="message {% if 'Successful' in message %}success{% else %}error{% endif %}">{{ message }}</p>
+        {% endif %}
+        <form action='/perform_login' method='post'>
+            <label>Email</label>
+            <input type='email' name='user_ka_email' required><br>
+            <label>Password</label>
+            <input type='password' name='user_ka_password' required><br>
+            <input type='submit' value='Login'>
+        </form>
+        <p>Not a member? <a href="/register"> Register here</a></p>
+    </div>
+</body>
+</html>
