@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abuse Detection Results</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Original Sentence:</h2>
+        <p>{{ original_text }}</p>
+
+        <h2>Detection Results:</h2>
+        <ul>
+            {% for res in response %}
+                <li>{{ res.label }}: {{ res.score }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
